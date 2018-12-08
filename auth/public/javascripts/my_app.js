@@ -3,6 +3,7 @@ angular.module('myApp', []).
                               function($scope, $http) {
     $http.get('/user/profile')
         .success(function(data, status, headers, config) {
+      $scope.list = data.list;
       $scope.user = data;
       $scope.error = "";
     }).

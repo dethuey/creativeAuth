@@ -1,32 +1,41 @@
 <!doctype html>
-<html ng-app="myApp"> 
-    
+<html ng-app="myApp">
+
 <head>
-    <title>User Login and Sessions</title>
+    <title>Christmas Wish List</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
 </head>
-        
-<body>  
+
+<body>
     <div ng-controller="myController">
         <h2 id="welcomeText">Welcome. You are Logged In as
             <%= username %>
         </h2>
+        <h1>My Christmas Wish List</h1>
         <a id="logoutLink" href="/logout">logout</a>
-        <a id="editLink" href="/user">Edit User</a>
-        <p>Place Your Code Here
-            <p>
+        <div class="form-container">
+            <p id="sectionTitle" class="form-header">User Profile</p>
+            <form method="POST" action="/user/update">
+                <input type="text" id="username" name="item" ng-model="user.item"><br>
+                <input type="submit" id="save" value="Add">
+            </form>
+        </div>
+        <form method="POST" action="/user/delete">
+            <input type="submit" id="delete" value="Delete User">
+        </form>
     </div>
     <hr>
     <span id="indexMsg">
         <%= msg %>
     </span>
     <hr>
-    <span id="colorText">
-    Color
-        <%= color %>
-      </span>
+    <ul>
+        <li ng-repeat='item in list'>
+            {{item}}
+        </li>
+    </ul>
     <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
     <script src="/javascripts/my_app.js"></script>
 </body>
-      
+
 </html>

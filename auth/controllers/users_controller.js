@@ -11,8 +11,6 @@ exports.signup = function(req, res){
   console.log("after new user exports.signup");
   user.set('hashed_password', hashPW(req.body.password));
   console.log("after hashing user exports.signup");
-  user.set('email', req.body.email);
-  console.log("after email user exports.signup");
   user.save(function(err) {
     console.log("In exports.signup");
     console.log(err);
@@ -67,16 +65,16 @@ exports.getUserProfile = function(req, res) {
 exports.updateUser = function(req, res){
   User.findOne({ _id: req.session.user })
   .exec(function(err, user) {
-    user.set('email', req.body.email);
-    user.set('color', req.body.color);
+    user.set('list', req.body.item);
     user.save(function(err) {
       if (err){
         res.sessor.error = err;
       } else {
         req.session.msg = 'User Updated.';
-        req.session.color = req.body.color;
+        //req.session.color = req.body.color;
+        req.session.list = req.body.list;
       }
-      res.redirect('/user');
+      //res.redirect('/user');
     });
   });
 };
