@@ -1,6 +1,6 @@
 //import app from '/modules/firebase.js'
-var app = require('../../modules/firebase.js');
-var firebase = app.ref();
+//var app = require('firebase.js');
+//var firebase = app.ref();
 
 /**
  * Function called when clicking the Login/Logout button.
