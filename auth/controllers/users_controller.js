@@ -77,7 +77,7 @@ exports.updateUser = function(req, res){
       if (err){
         res.sessor.error = err;
       } else {
-        req.session.msg = 'User SO Updated.';
+        req.session.msg = 'User Updated.';
         //req.session.color = req.body.color;
         req.session.list = list;
       }

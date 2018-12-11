@@ -1,8 +1,53 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+.navbar {
+  background-color: #cc0000;
+}
+
+.main {
+  padding: 50px;
+}
+
+#welcomeText {
+  font-size: 14px;
+  color:#ffcccc;
+}
+
+#logoutLink {
+  text-align:right;
+  color:white;
+}
+
+#logoutLink:hover {
+  color:#ffcccc;
+}
+
+#signUpLink {
+  color:#009933;
+  text-decoration: none;
+}
+
+#signUpLink:hover {
+  color:#79d279;
+}
+
+h1 {
+  color: #cc0000;
+  font-size: 50px;
+}
+
+.wishList {
+  font-size: 25px;
+  padding-bottom: 80px;
+  padding-left:20px;
+}
+
+.form-container {
+  padding: 50px;
 }
