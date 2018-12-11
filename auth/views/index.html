@@ -16,7 +16,7 @@
         <div class="form-container">
             <p id="sectionTitle" class="form-header">User Profile</p>
             <form method="POST" action="/user/update">
-                <input type="text" id="username" name="item" ng-model="user.item"><br>
+                <input type="text" id="item" name="item" ng-model="user.item"><br>
                 <input type="submit" id="save" value="Add">
             </form>
         </div>
@@ -29,6 +29,8 @@
         <%= msg %>
     </span>
     <hr>
+    <%= list %>
+    
     <ul>
         <li ng-repeat='item in list'>
             {{item}}

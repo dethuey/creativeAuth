@@ -38,7 +38,7 @@ exports.login = function(req, res){
         req.session.user = user.id;
         req.session.username = user.username;
         req.session.msg = 'Authenticated as ' + user.username;
-        req.session.color = user.color;
+        //req.session.color = user.color;
         res.redirect('/');
       });
     }else{
@@ -63,18 +63,25 @@ exports.getUserProfile = function(req, res) {
   });
 };
 exports.updateUser = function(req, res){
+  console.log("Updating!");
   User.findOne({ _id: req.session.user })
   .exec(function(err, user) {
-    user.set('list', req.body.item);
+    console.log("In update");
+    console.log("BODY", req.body);
+    var list = user.get('list');
+    list.push(req.body.item);
+    console.log("MY LIST", list.toString());
+    user.set('list', list);
+    //user.set('list', req.body.item);
     user.save(function(err) {
       if (err){
         res.sessor.error = err;
       } else {
-        req.session.msg = 'User Updated.';
+        req.session.msg = 'User SO Updated.';
         //req.session.color = req.body.color;
-        req.session.list = req.body.list;
+        req.session.list = list;
       }
-      //res.redirect('/user');
+      res.redirect('/');
     });
   });
 };

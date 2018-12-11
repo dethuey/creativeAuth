@@ -19,7 +19,7 @@ router.get('/', function(req, res){
       res.redirect('/login');
     }
 });
-router.get('/user', function(req, res){
+/*router.get('/user', function(req, res){
     console.log("/user Route");
     if (req.session.user) {
       res.render('user', {msg:req.session.msg});
@@ -27,7 +27,7 @@ router.get('/user', function(req, res){
       req.session.msg = 'Access denied!';
       res.redirect('/login');
     }
-});
+});*/
 router.get('/signup', function(req, res){
     console.log("/signup Route");
     if(req.session.user){
